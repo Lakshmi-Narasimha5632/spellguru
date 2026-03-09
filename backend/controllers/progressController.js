@@ -141,10 +141,10 @@ exports.updateProgress = async (req, res) => {
     }
 
     // store highest letter progress
-    progress.letterIndex = Math.max(
-      progress.letterIndex,
-      letterIndex
-    );
+    progress.letterIndex = Math.min(
+  26,
+  Math.max(progress.letterIndex, letterIndex)
+);
 
     // store best stars only
     progress.stars = Math.max(
